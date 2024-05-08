@@ -33,12 +33,12 @@ class ArticleController extends Controller
             'body.max' => '本文は256文字以内だよ'
         ];
 
-        /*$validation = Validator::make($inputs, $rules, $messages);
+        $validation = Validator::make($inputs, $rules, $messages);
 
         if ($validation->fails()){
             return redirect()->back()->withErrors($validation->errors())->withInput();
-        }*/
-        
+        }
+
         // 保存の処理
         $article = new Article;
         $article->user_id = 1; // 今回は1固定       
