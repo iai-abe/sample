@@ -38,6 +38,7 @@ class ArticleController extends Controller
         if ($validation->fails()){
             return redirect()->back()->withErrors($validation->errors())->withInput();
         }*/
+        
         // 保存の処理
         $article = new Article;
         $article->user_id = 1; // 今回は1固定       
