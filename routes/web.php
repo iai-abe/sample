@@ -1,8 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+/* TaskControllerクラスを名前空間でインポートする */
+use App\Http\Controllers\TaskController;
 
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
-Route::get('/article', 'App\Http\Controllers\ArticleController@index');
-Route::post('/article/add', 'App\Http\Controllers\ArticleController@add');
-Route::post('/article/delete/{id}', 'App\Http\Controllers\ArticleController@delete');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+/* Laravel welcome Page */
+Route::get('/', function () {
+    return view('welcome');
+});
+/* index page */
+Route::get("/folders/tasks", [TaskController::class,"index"])->name("tasks.index");
